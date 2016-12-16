@@ -1,0 +1,22 @@
+<ion-view view-title="Events">
+	<div id="datesAndSearch" class="bar bar-subheader item-input-inset">
+		<label class="item item-input">
+			<span class="input-label">Date</span>
+			<input ng-model="dateString_one" type="date">
+		</label>
+
+		<label class="item item-input">
+			<span class="input-label">Date</span>
+			<input ng-model="dateString_two" type="date">
+		</label>
+		<button class="button button-full button-positive" ng-click="searchEvents()">Submit</button>
+	</div>
+	<ion-content id="eventListing">
+		<br>
+		<ion-list>
+			<ion-item ng-repeat="event in eventsWithinDates">
+				<p>{{event.title}}</p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

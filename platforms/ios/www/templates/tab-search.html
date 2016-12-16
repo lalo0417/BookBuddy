@@ -1,0 +1,25 @@
+<ion-view view-title="Search">
+	<div id="searchBar" class="bar bar-subheader item-input-inset">
+		<label class="item-input-wrapper" id="searchInput">
+			<i class="icon ion-search"></i>
+			<input id="search" type="text" placeholder="Search" ng-model="value" ng-model-options="{debounce: 300}" ng-change="search()">
+		</label>
+	</div>
+	<ion-content id="searchList">
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+		</ion-refresher>
+
+
+
+		<ion-list>
+			<ion-item ng-repeat="book in booksToShow" on-swipe-left="onSwipeLeft()" href="#/tab/search/{{book.best_book.id.__text}}">
+				<img id="bookImage" src="{{book.best_book.image_url}}" alt="">
+				<div id="bookInfo">
+					<h3 id="bookName">{{book.best_book.title}}</h3>
+					<p id="bookAuthor">{{book.best_book.author.name}}</p>
+					<p>Rating: {{book.average_rating}}</p>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

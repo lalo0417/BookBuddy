@@ -1,0 +1,14 @@
+{
+	"name": "AngularFinalAssignement",
+	"app_id": "",
+	"proxies": [
+		{
+			"path": "/search",
+			"proxyUrl": "https://www.goodreads.com/search"
+		},
+		{
+			"path": "/book",
+			"proxyUrl": "https://www.goodreads.com/book"
+		}
+	]
+}
